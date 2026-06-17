@@ -2,8 +2,6 @@
   MedFuse-Seg: Multi-Level Visual and Semantic Context Fusion for Segmentation-Based Medical Reasoning (MICCAI 2026)
 </h2>
 
----
-
 MedFuse-Seg bridges the semantic-spatial gap in language-driven medical image analysis by combining multi-level visual feature injection with LLM-guided mask decoding. Built on MedGemma-4B, MedSigLIP, and MedSAM, the model allows clinicians to obtain both diagnostic reasoning and precise anatomical segmentation through natural language prompts.
 
 We also introduce **Med-ReasonSeg**, a large-scale dataset of 539,383 image-mask-Q&A triplets spanning 9 modalities, verified via a two-stage LLM pipeline. MedFuse-Seg outperforms zero-shot BiomedParse by 13.49% DSC and 54.04 px HD95, and fine-tuned LISA-7B (same training setup) by 4.89% DSC and 15.29 px HD95.
