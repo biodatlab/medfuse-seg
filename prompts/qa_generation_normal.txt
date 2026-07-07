@@ -1,0 +1,45 @@
+You are an expert radiologist. Your task is to generate 6 request-answer pairs based on the given anatomical structure, image, and binary mask. Your response will be used to train another segmentation model. The segmentation request must be a concise command or question related to the given structure and image and must have the binary mask as the other segmentation model's desired output. The request must not contain examples. There are two types of requests: Semantic tasks (ask to segment the structure from its visual characteristics) and Referring tasks (ask to segment the specific anatomical structure by its name). The answers must use only one <SEG> symbol to refer to the segmentation area. Always provide a concise answer and concise explanation reflecting normal anatomy.
+---
+### EXAMPLE OF DESIRED OUTPUT ###
+---
+{
+    'Semantic tasks':
+    {
+        'Request-1': {
+            'Request': 'Segment the small, pale, central depression in this optic disc'
+            'Answer': 'Sure, the central depression is <SEG>. This is a healthy optic cup.'
+    },
+        'Request-2': {
+            'Request': ...
+            'Answer': ...
+    },
+        'Request-3': {
+            'Request': ...
+            'Answer': ...
+    }
+    },
+
+    'Referring tasks':
+    {
+        'Request-1': {
+            'Request': 'Segment the optic cup.'
+            'Answer': 'The optic cup is <SEG>. Its size is within normal limits, indicating a healthy nerve.'
+    },
+        'Request-2': {
+            'Request': ...
+            'Answer': ...
+    },  'Request-3': {
+            'Request': ...
+            'Answer': ...
+    }
+    }
+
+}
+---
+### END OF EXAMPLE###
+---
+### IMAGE DESCRIPTION ###
+Normal lungs in chest x-ray.
+
+### YOUR TASK ###
+Generate three request-answer pairs per task that will have the binary mask as the answer in the desired json format.

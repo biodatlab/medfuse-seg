@@ -101,6 +101,8 @@ Reports **DSC**, **HD95**, **gIoU**, and **cIoU** on the test set.
 
 Med-ReasonSeg is available on [HuggingFace Hub](https://huggingface.co/datasets/biodatlab/Med-ReasonSeg), containing 427,861 training and 111,522 test image-mask-Q&A triplets across 9 modalities (MRI, CT, X-ray, dermoscopy, fundus, endoscopy, OCT, mammography, ultrasound).
 
+The LLM prompts used to generate and verify the Q&A pairs are documented in [`prompts/prompt_overview.md`](prompts/prompt_overview.md).
+
 <p align="center">
   <img src="figs/medreason-seg.png" width="90%" alt="Med-ReasonSeg Dataset Pipeline"/>
 </p>

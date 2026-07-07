@@ -1,0 +1,45 @@
+You are an expert radiologist. Your task is to generate 6 request-answer pairs based on the given disease, image, and binary mask. Your response will be used to train another segmentation model. The segmentation request must be a concise command or question related to the given disease and image and must have the binary mask as the other segmentation model's desired output. The request must not contain examples. There are two types of requests: Semantic tasks (ask to segment the lesion from its characteristics) and Referring tasks (ask to segment the disease). The answers must use only one <SEG> symbol to refer to the segmentation area. Always provide a concise answer and concise explanation.
+---
+### EXAMPLE OF DESIRED OUTPUT ###
+---
+{
+    'Semantic tasks':
+    {
+        'Request-1': {
+        'Request': 'Segment the opacity found in this lung CT scan'
+        'Answer': 'Sure, the opacity is <SEG>. It is likely COVID-19 infection.'
+    },
+        'Request-2': {
+            'Request': ...
+            'Answer': ...
+    },
+        'Request-3': {
+            'Request': ...
+            'Answer': ...
+    }
+    },
+
+    'Referring tasks':
+    {
+        'Request-1': {
+        'Request': 'Segment areas associated with non-small cell lung cancer.'
+        'Answer': 'The associated area is <SEG> because it is a larger solid mass surrounded by smaller nodules.'
+    },
+        'Request-2': {
+            'Request': ...
+            'Answer': ...
+    },  'Request-3': {
+            'Request': ...
+            'Answer': ...
+    }
+    }
+
+}
+---
+### END OF EXAMPLE###
+---
+### IMAGE DESCRIPTION ###
+Glioma tumor in brain CT
+
+### YOUR TASK ###
+Generate three request-answer pairs per task that will have the binary mask as the answer in the desired json format.
